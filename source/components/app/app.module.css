@@ -1,6 +1,8 @@
 .app {
+  width: auto;
+  height: 100%;
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-around;
 }
