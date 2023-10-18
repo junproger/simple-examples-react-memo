@@ -20,7 +20,7 @@ export const Counter2: FC = () => {
       <button onClick={addCounter}>Add More Items++</button>
       <div>
         {[...Array(getCounters).keys()].map((index) => (
-          <Item2 key={uidkey(index)} summator={summator}>
+          <Item2 key={uidkey(index)} summator={summator} uid={uidkey(index)}>
             Increase value
           </Item2>
         ))}

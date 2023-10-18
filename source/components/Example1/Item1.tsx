@@ -4,10 +4,11 @@ import { logging } from '../../utils/logging';
 
 export interface Item1Prop {
   callback: () => void;
+  uid: string;
   children: ReactNode;
 }
 
-const memoItem1: FC<Item1Prop> = ({ callback, children }) => {
+const memoItem1: FC<Item1Prop> = ({ callback, uid, children }) => {
   logging('ITEM-1 is rendered');
   const [value, setValue] = useState(0);
   const clickHandle = (): void => {
@@ -17,7 +18,7 @@ const memoItem1: FC<Item1Prop> = ({ callback, children }) => {
   return (
     <p>
       <button onClick={clickHandle}>
-        {children} {value}
+        {uid} {children} {value}
       </button>
     </p>
   );

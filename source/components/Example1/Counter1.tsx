@@ -15,7 +15,7 @@ export const Counter1: FC = () => {
       <p>Current value = {total}</p>
       <div>
         {[...Array(counters).keys()].map((index) => (
-          <Item1 key={uidkey(index)} callback={clickHandle}>
+          <Item1 key={uidkey(index)} callback={clickHandle} uid={uidkey(index)}>
             Increase value
           </Item1>
         ))}

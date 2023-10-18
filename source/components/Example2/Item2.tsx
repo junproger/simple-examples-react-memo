@@ -4,10 +4,11 @@ import { logging } from '../../utils/logging';
 
 export interface Item2Prop {
   summator: () => void;
+  uid: string;
   children: ReactNode;
 }
 
-const memoItem2: FC<Item2Prop> = ({ summator, children }) => {
+const memoItem2: FC<Item2Prop> = ({ summator, uid, children }) => {
   logging('Button-2 is rendered');
   const [getItemCount, setItemCount] = useState(0);
   const countHandle = (): void => {
@@ -17,7 +18,7 @@ const memoItem2: FC<Item2Prop> = ({ summator, children }) => {
   return (
     <p>
       <button onClick={countHandle}>
-        {children} {getItemCount}
+        {uid} {children} {getItemCount}
       </button>
     </p>
   );
