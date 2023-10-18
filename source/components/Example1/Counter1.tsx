@@ -1,6 +1,8 @@
 import { FC, useCallback, useState } from 'react';
 
 import { logging } from '../../utils/logging';
+import { counters } from '../../constants/counters';
+import { uidkey } from '../../helpers/uidkey';
 
 import { Item1 } from './Item1';
 
@@ -12,14 +14,11 @@ export const Counter1: FC = () => {
     <div>
       <p>Current value = {total}</p>
       <div>
-        <Item1 callback={clickHandle}>Increase value</Item1>
-        <Item1 callback={clickHandle}>Increase value</Item1>
-        <Item1 callback={clickHandle}>Increase value</Item1>
-        <Item1 callback={clickHandle}>Increase value</Item1>
-        <Item1 callback={clickHandle}>Increase value</Item1>
-        <Item1 callback={clickHandle}>Increase value</Item1>
-        <Item1 callback={clickHandle}>Increase value</Item1>
-        <Item1 callback={clickHandle}>Increase value</Item1>
+        {[...Array(counters).keys()].map((index) => (
+          <Item1 key={uidkey(index)} callback={clickHandle}>
+            Increase value
+          </Item1>
+        ))}
       </div>
     </div>
   );
