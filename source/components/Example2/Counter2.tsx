@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useCallback, useState } from 'react';
 
 import { uidkey } from '../../helpers/uidkey';
 import { logging } from '../../utils/logging';
@@ -12,7 +12,7 @@ export const Counter2: FC = () => {
   const addCounter = (): void => {
     setCounters((prevVal) => prevVal + 1);
   };
-  const summator = (): void => setTotalSum((prevVal) => prevVal + 1);
+  const summator = useCallback((): void => setTotalSum((prevVal) => prevVal + 1), []);
   return (
     <div>
       <p>Quantity of Items: {getCounters}</p>

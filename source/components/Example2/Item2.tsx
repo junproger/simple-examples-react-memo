@@ -1,4 +1,4 @@
-import { FC, ReactNode, useState } from 'react';
+import { FC, memo, ReactNode, useState } from 'react';
 
 import { logging } from '../../utils/logging';
 
@@ -7,7 +7,7 @@ export interface Item2Prop {
   children: ReactNode;
 }
 
-export const Item2: FC<Item2Prop> = ({ summator, children }) => {
+const memoItem2: FC<Item2Prop> = ({ summator, children }) => {
   logging('Button-2 is rendered');
   const [getItemCount, setItemCount] = useState(0);
   const countHandle = (): void => {
@@ -22,3 +22,5 @@ export const Item2: FC<Item2Prop> = ({ summator, children }) => {
     </p>
   );
 };
+
+export const Item2 = memo(memoItem2);
