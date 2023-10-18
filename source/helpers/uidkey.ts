@@ -1,4 +1,4 @@
-export const uid = (indx: number): string => {
+export const uidkey = (indx: number): string => {
   const utf8 = 65;
   const sign = '#';
   const numb = indx + 1;
