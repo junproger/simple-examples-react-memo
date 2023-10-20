@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import { logging } from '../../utils/logging';
 import { counters } from '../../constants/counters';
@@ -10,7 +10,7 @@ export interface List1Prop {
   callback: () => void;
 }
 
-export const List1: FC<List1Prop> = ({ callback }) => {
+const memoList1: FC<List1Prop> = ({ callback }) => {
   logging('LIST-1 is rendered');
   return (
     <div>
@@ -22,3 +22,5 @@ export const List1: FC<List1Prop> = ({ callback }) => {
     </div>
   );
 };
+
+export const List1 = memo(memoList1);
