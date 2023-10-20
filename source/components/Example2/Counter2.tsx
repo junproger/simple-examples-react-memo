@@ -4,6 +4,7 @@ import { uidkey } from '../../helpers/uidkey';
 import { logging } from '../../utils/logging';
 
 import { Item2 } from './Item2';
+import { Result2 } from './Result2';
 
 export const Counter2: FC = () => {
   logging('COUNTER-2 is rendered');
@@ -14,9 +15,8 @@ export const Counter2: FC = () => {
   };
   const summator = useCallback((): void => setTotalSum((prevVal) => prevVal + 1), []);
   return (
-    <div>
-      <p>Quantity of Items: {getCounters}</p>
-      <p>Total sum of Values: {getTotalSum}</p>
+    <>
+      <Result2 counters={getCounters} values={getTotalSum} />
       <button onClick={addCounter}>Add More Items++</button>
       <div>
         {[...Array(getCounters).keys()].map((index) => (
@@ -25,6 +25,6 @@ export const Counter2: FC = () => {
           </Item2>
         ))}
       </div>
-    </div>
+    </>
   );
 };
