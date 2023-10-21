@@ -9,7 +9,7 @@ export interface Item2Prop {
 }
 
 const memoItem2: FC<Item2Prop> = ({ summator, uid, children }) => {
-  logging('Button-2 is rendered');
+  logging('ITEM-2 is rendered');
   const [getItemCount, setItemCount] = useState(0);
   const countHandle = (): void => {
     setItemCount((prevVal) => prevVal + 1);
