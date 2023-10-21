@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import { uidkey } from '../../helpers/uidkey';
 import { logging } from '../../utils/logging';
@@ -10,7 +10,7 @@ export interface List2Prop {
   summator: () => void;
 }
 
-export const List2: FC<List2Prop> = ({ counters, summator }) => {
+const memoList2: FC<List2Prop> = ({ counters, summator }) => {
   logging('LIST-2 is rendered');
   return (
     <div>
@@ -22,3 +22,5 @@ export const List2: FC<List2Prop> = ({ counters, summator }) => {
     </div>
   );
 };
+
+export const List2 = memo(memoList2);
