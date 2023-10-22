@@ -2,6 +2,8 @@ import { FC, ReactNode, useState } from 'react';
 
 import { logging } from '../../utils/logging';
 
+import { Button1 } from './Button1';
+
 export interface Item1Prop {
   callback: () => void;
   uid: string;
@@ -17,9 +19,9 @@ export const Item1: FC<Item1Prop> = ({ callback, uid, children }) => {
   };
   return (
     <p>
-      <button onClick={clickHandle}>
+      <Button1 callback={clickHandle}>
         {uid} {children} {value}
-      </button>
+      </Button1>
     </p>
   );
 };
