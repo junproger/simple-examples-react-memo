@@ -10,7 +10,9 @@ export const Counter2: FC = () => {
   const [getCounters, setCounters] = useState<number[]>([]);
   const [getTotalSum, setTotalSum] = useState(0);
   const addCounter = (): void => {
-    setCounters((prevVal) => prevVal.concat(prevVal.length + 1));
+    setCounters((prevVal) => {
+      return [...prevVal, prevVal.length + 1];
+    });
   };
   const summator = useCallback((): void => setTotalSum((prevVal) => prevVal + 1), []);
   return (
