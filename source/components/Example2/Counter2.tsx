@@ -7,15 +7,15 @@ import { List2 } from './List2';
 
 export const Counter2: FC = () => {
   logging('COUNTER-2 is rendered');
-  const [getCounters, setCounters] = useState(0);
+  const [getCounters, setCounters] = useState<number[]>([]);
   const [getTotalSum, setTotalSum] = useState(0);
   const addCounter = (): void => {
-    setCounters((prevVal) => prevVal + 1);
+    setCounters((prevVal) => prevVal.concat(prevVal.length + 1));
   };
   const summator = useCallback((): void => setTotalSum((prevVal) => prevVal + 1), []);
   return (
     <>
-      <Result2 counters={getCounters} values={getTotalSum} />
+      <Result2 counters={getCounters.length} values={getTotalSum} />
       <button onClick={addCounter}>Add More Items++</button>
       <List2 counters={getCounters} summator={summator} />
     </>
