@@ -8,7 +8,7 @@ export interface Item1Prop {
   children: ReactNode;
 }
 
-const memoItem1: FC<Item1Prop> = ({ callback, uid, children }) => {
+const Item1Memo: FC<Item1Prop> = ({ callback, uid, children }) => {
   logging('ITEM-1 is rendered');
   const [value, setValue] = useState(0);
   const clickHandle = (): void => {
@@ -24,4 +24,4 @@ const memoItem1: FC<Item1Prop> = ({ callback, uid, children }) => {
   );
 };
 
-export const Item1 = memo(memoItem1);
+export const Item1 = memo(Item1Memo);
