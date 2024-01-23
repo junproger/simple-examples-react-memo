@@ -11,7 +11,7 @@ export interface List1Prop {
   callback: () => void;
 }
 
-const memoList1: FC<List1Prop> = ({ callback }) => {
+const List1Memo: FC<List1Prop> = ({ callback }) => {
   logging('LIST-1 is rendered');
   return (
     <div>
@@ -24,4 +24,4 @@ const memoList1: FC<List1Prop> = ({ callback }) => {
   );
 };
 
-export const List1 = memo(memoList1);
+export const List1 = memo(List1Memo);

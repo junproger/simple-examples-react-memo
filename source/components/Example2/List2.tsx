@@ -11,7 +11,7 @@ export interface List2Prop {
   summator: () => void;
 }
 
-const memoList2: FC<List2Prop> = ({ counters, summator }) => {
+const List2Memo: FC<List2Prop> = ({ counters, summator }) => {
   logging('LIST-2 is rendered');
   return (
     <div>
@@ -24,4 +24,4 @@ const memoList2: FC<List2Prop> = ({ counters, summator }) => {
   );
 };
 
-export const List2 = memo(memoList2);
+export const List2 = memo(List2Memo);
