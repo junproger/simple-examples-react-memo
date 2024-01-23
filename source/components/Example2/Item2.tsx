@@ -8,7 +8,7 @@ export interface Item2Prop {
   children: ReactNode;
 }
 
-const memoItem2: FC<Item2Prop> = ({ summator, uid, children }) => {
+const Item2Memo: FC<Item2Prop> = ({ summator, uid, children }) => {
   logging('Button-2 is rendered');
   const [getItemCount, setItemCount] = useState(0);
   const countHandle = (): void => {
@@ -24,4 +24,4 @@ const memoItem2: FC<Item2Prop> = ({ summator, uid, children }) => {
   );
 };
 
-export const Item2 = memo(memoItem2);
+export const Item2 = memo(Item2Memo);
